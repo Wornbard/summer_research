@@ -1,0 +1,163 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage{tikz-cd}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}                                                                 
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}   
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section*{ 2020-06-18}
+\subsection*{Fundamental group}
+Start with a topological space $X$ and a fixed point $x\in X$. We construct a group out of loops in the space modulo homotopy equivalence.
+\begin{defn}[Homotopy]
+    Let $f_0,f_1:X\to Y $ be maps between topological spaces. Then a homotopy between $f_0$ and $f_1$ is a continuous map \[F:X \times \left[ 0,1 \right] \to Y\] with $F(x,0)=f_0(x)$, $F(x,1)=f_1(x)$ for all $x\in X$.
+\end{defn}
+So it's a "continuous deformation of one function into the other."\\
+A loop is exactly what I think it is, a map $f: \left[ 0,1 \right] \to X$ with $f( 0)=f(1)=x$.
+Then two loops are homotopic if we can continuously map one onto the other. For instance a loop on a space with "no holes" (not sure how to formalize it) is homotopy equivalent to a loop constantly equal to zero.\\
+\begin{figure}[ht]
+    \centering
+    \incfig{loopcontract}
+    \caption{loop contraction}
+    \label{fig:loopcontract}
+\end{figure}
+With this out of the way we can define
+\begin{defn}[Fundamental group]
+    Given a space $X$ with the fixed point $x$ we define the fundamental group $\pi_1(X,x)$ to be the group of loops through $x$ on $X$ modulo homotopy equivalence with the group operation being the "joining of loops". That is we squeeze the domains of two loops to $\left[ 0,0.5 \right] $ and $\left[ 0.5,1 \right] $ and this combined gives us a new loop.
+\end{defn}
+It's not obvious this is a group. Associativity holds because in a product of three groups  $\gamma_1.\gamma_2,\gamma_3$ the difference between $\left( \gamma_1\gamma_2 \right)\gamma_3 $ and $\gamma_1\left( \gamma_2\gamma_3 \right) $ is how they squeeze the $\left[ 0,1 \right] $ interval between different loops but we can map one to the other by a homotopy.\\
+Closure seems obvious. Squeezing the interval into smaller ones doesn't do anything to open sets and unions of open sets are open so the preimages of open sets are still open i.e. our loop is still continuous and that's really all that we need.\\
+Now inverses: The inverse of a loop $\gamma$ is the loop that goes in the opposite direction i.e.  $\gamma(t)=\gamma^{-1}(1-t)$. This is an inverse because we can take a homotopy that "sucks in" the resulting loop at the end, but once again I am not sure how to write it formally because if we just take the image of our loops with restricted domain, then we somehow need to connect the endpoints to  $x$.
+\begin{figure}[ht]
+    \centering
+    \incfig{loop_inverse}
+    \caption{loop inverse}
+    \label{fig:loop_inverse}
+\end{figure}
+\subsection*{Examples of fundamental groups}
+\begin{enumerate}
+    \item $X=\text{point}$ or $X$ contractible. Then as noted above all loops are homotopy equivalent to a constant one so  $\pi_1(X,x)=\left\{ e \right\} $ is the trivial group
+    \item $X=S^{1}$, a circle. Then every loop can be characterized by how many times it goes around the circle in the "positive" direction (going in the other one counts as negative) so clearly our group is $\Z$
+    \item $X=T^{2}=S^{1}\times S^{1}$, a torus. Here we can identify two distinct loops going around each of the two circles, moreover these commute. Let $\gamma_1,\gamma_2$ be two loops each going  $2\pi$ around one of the $S^{1}$ and constant on the other. Then we would like to show the equivalence of $\gamma_1\gamma_2$ and $\gamma_2\gamma_1$. Our homotopy $F$ can be given by  \[
+            x\mapsto x\cdot \gamma_1\gamma_2(t)+(1-x)\gamma_2\gamma_1(t) 
+        .\] where we parametrize each circle by the angle corresponding to each point on it. This seems to work anyway. Another way is to look at the "square" representation of the torus. Either way, once we know that these two commute, if we can convince ourselves that there is no loop not homotopic to some composition of these, then we must have $\pi_1(X,x)=\Z \times \Z$. So why is this true? Any loop on the torus will go around each circle some number of times and then, since these commute it's only a matter of "how quickly" it it goes around each but I guess homotopy allows us not to think about this.
+\begin{figure}[ht]
+    \centering
+    \incfig{torus}
+    \caption{torus}
+    \label{fig:torus}
+\end{figure}
+\item $X=S^{1}\vee S^{1}$ i.e. two circles connected at a point. Let the fixed point $x$ be where they touch, but if it was any other point it would be the same. Then there are two distinct loops around two different circles and there are no relations between them (i.e. if the order and direction of going around these is different, then the curves are not homotopy equivalent). This the free group with two generators i.e. $\pi_1(X,x)=F_2$.
+\begin{figure}[ht]
+    \centering
+    \incfig{circlewedge}
+    \caption{circlewedge}
+    \label{fig:circlewedge}
+\end{figure}
+\end{enumerate}
+\subsection*{Functoriality, automorphisms of $X$ and $\pi_1(X)$}
+Given a map between topological spaces $f:X\to Y$ we can associate with it a map between their fundamental groups with appropriate fixed points. It is
+\begin{align*}
+    f_*: & \pi_1(X,x)\to  \pi_1(Y,f(x))\\
+    & \left[ \gamma \right]\mapsto \left[ f\circ\gamma \right]  
+.\end{align*}
+One can check (or so I'm told) that given $f:X\to Y$ and $g:Y\to Z$, then $(g\circ f)_*=g_*\circ f_*$.\\
+If  $f$ is an automorphism of $X$, then $f_*$ is an automorphism of $\pi_1(X,x)$ and the inverse of $f_*$ is $\left( f^{-1} \right)_*$. Hence we have a map
+\begin{align*}
+    \varphi: & \text{Aut}(X,x)\to \text{Aut}(\pi (X,x))\\
+    & f\mapsto f_*
+.\end{align*}
+Here the first group is automorphisms of $X$ that fix $x$. Moreover this map is a homomorphism because of the composition property from above.
+\begin{exmp}
+    $X=S^{1}$, $\pi_1(X,x)=\Z$. We have $\text{Aut}_{grp}(\Z)=\{id,n\mapsto -n\}=\frac{\Z}{2\Z}$ The identity automorphism is the image of the identity automorphism of our space. So is the other one actually, since a reflection in an axis through $x$ and the centre of the circle sends each loop to its inverse.
+
+\end{exmp}
+\begin{exmp} $X=T^{2}=S^{1}\times S^{1}$, $\pi_1(X,x)=\Z\times\Z$. Let's find the automorphism group of $\pi_1$. Each automorphism is defined by the image of $\left( 1,0 \right) $ and $\left( 0,1 \right) $ and these must give a unique preimage of each element of $\Z^{2}$. So suppose \[
+    \begin{pmatrix} x\\ y  \end{pmatrix}\mapsto \begin{pmatrix} k & l \\ m & n  \end{pmatrix}\begin{pmatrix} x\\y \end{pmatrix}
+.\] 
+Then we just need our matrix to be invertible with the entries of the inverse also in $\Z$. Hence our automorphism group is $GL_{2}\left( \Z \right) $.\\
+Let's see if every automorphism of $\pi_1$ is the image of an automorphism of $X$. Let $I=\left[ 0,1 \right) $. Then we can parametrize the torus by $I^2$ in the obvious way with $(0,0)$ being the fixed point $x$. In this context we can consider the same map \[
+    \begin{pmatrix} x\\ y  \end{pmatrix}\mapsto \begin{pmatrix} k & l \\ m & n  \end{pmatrix}\begin{pmatrix} x\\y \end{pmatrix} \mod\Z^2
+.\] It definitely sends loops to loops. Is it an automorphism? It comes down to injectivity. Suppose the images of two points differ by an "integer vector". Then by taking their difference we have \[
+M\underline{x}=\begin{pmatrix} k & l\\ m & n \end{pmatrix} \begin{pmatrix} x\\y \end{pmatrix}=\begin{pmatrix} a\\b \end{pmatrix}\in \Z^2\setminus \{0\}
+.\] 
+But $M$ is invertible so $\underline{x}=M^{-1}\underline{a}$ and RHS clearly has integer entries so $\underline{x}=\underline{0}$ so the map is injective. Surjectivity also clearly holds, as does continuity so it is an automorphism. Moreover it does to our loops precisely the same thing as the automorphism of $\pi_1$ represented by the same matrix, so it is mapped to it. Hence the map between automorphism groups is surjective.
+
+\end{exmp}
+\begin{exmp}$X=S^{1}\vee S^{1}$, $\pi_1(X,0)=F_2$.
+    The automorphism group of the free group seems quite terrifying. It's infinite, non-abelian and I don't know how to describe all of its elements. But it seems not too terrible to classify the automorphisms of $X$ that do something non-trivial to the loops. A loop that wounds around either circle one has to be mapped to a loop with the same property because automorphisms are injective and the initial loop (or at least a homotopy-equivalent one) is injective except for the double $0$ preimage. Call the two fundamental loops $\gamma_1,\gamma_2$. Then the automorphism of $\pi_1$ it gives is determined by the image of $\gamma_1$ which can be $\pm\gamma_1,\gamma_2$. Hence the image of the automorphism group of $X$ in $\pi_1$ is $C_2\times C_2$ and this definitely is not the whole automorphism group of $F_2$.
+    
+\end{exmp}
+\subsection*{Remaining questions}
+\begin{que}
+    How does the map from $S^{1}\vee S^{1}$ to $T^{2}$ work?\\
+    We can send the loops on one to the other. The fact that these commute on the torus but not the domain is because (I guess) there is "more room" on the torus for a homotopy that sends one to the other. The torus with a point removed is homotopy equivalent to the wedge of two circles (I think of it as "burning out" the space from the removed point until we are left with two loops) and without that point our homotopy between the compositions of two loops in different orders no longer works.  
+\begin{figure}[ht]
+    \centering
+    \incfig{circlewedgehomotopy}
+    \caption{circlewedgehomotopy}
+    \label{fig:circlewedgehomotopy}
+\end{figure}
+\end{que}
+\begin{que}
+    Is there a space whose homotopy group has torsion?\\
+    Yes, I guess but there are some holes in the reasoning. Take $\R\mathP^2$ with a fixed point $\left[ 1,0,0 \right] $ Then there is a line that goes to $[0,1,0]=[0,-1,0]$ and then from $[0,-1,0]$ back but from the other side. Then (most apparent if we take the square representation of the projective plane) we can "rotate" the line continuously to one which goes in the opposite direction. Hence it is its own inverse. However, I'm not sure how to prove rigorously that the line itself can't be contracted.  
+\begin{figure}[ht]
+    \centering
+    \incfig{projectiveline}
+    \caption{projectiveline}
+    \label{fig:projectiveline}
+\end{figure}
+    
+\end{que}
+\subsection*{Tensor products}
+\begin{defn}[Tensor product]
+    Let $M,N$ be two R-modules. Then we define their tensor product $M\otimes_RN$ to be the module generated by $m\otimes n$ with $m\in M$, $n \in N$ modulo relations
+    \begin{itemize}
+        \item $(m_1+m_2)\otimes n=m_1\otimes n + m_2\otimes n$
+        \item The same thing in the other entry
+        \item $r\left( m\otimes n \right) =\left( rm \right) \otimes n = m\otimes\left( rn \right) $
+    \end{itemize}
+\end{defn}
+Some observations that took us way too long to figure out:\\
+1. Given a bilinear map $M\times N\to \text{whatever}$, if $(m,n)$ and $(m', n')$ are sent to different things, then their corresponding tensor products are different.\\
+2. $m \otimes 0=0\otimes n=0\otimes 0=0$ because we can take out $r=0$ and move it to the other term as well.\\
+\\
+Let's take a look at some examples.
+\begin{exmp}
+    $M\otimes R = M$ with the isomorphism being $m\otimes r\mapsto rm$, $m\to m\otimes 1$. More generally $M\otimes_R R^{n}=M^{n}$ with $m\otimes \left( r_1, \ldots r_n \right)\mapsto \left( r_1 m, \ldots, r_n m \right) $ and the inverse being $\left( m_1, \ldots, m_n \right)\mapsto m_1\otimes \left( 1,0, \ldots, 0 \right) +\ldots +m_n\otimes \left( 0, \ldots, 0,1 \right)  $. 
+\end{exmp}
+\begin{exmp}
+    $\frac{\Z}{n\Z}\otimes_\Z \Q=\left\{ 0 \right\} $. Indeed note that $k\otimes \frac{p}{q}=nk\otimes \frac{p}{nq}=0\otimes \frac{p}{nq}=0$. This will work for any abelian group whose every element has finite order (i.e. also direct products of cyclic groups).
+\end{exmp}
+\begin{exmp}
+    $\frac{Z}{m}\otimes _\Z \frac{\Z}{n}=\frac{\Z}{\gcd\left( m,n \right) }$.
+    \\Let $\gcd(m,n)=d$. Then have  $a,b$ s.t. $am+bn=d$ so  $k\otimes l=kl (1\otimes 1)=(od+r)\left( 1\otimes 1 \right) =r\left( 1\otimes 1 \right) +o\left( am+dn \right) \left( 1\otimes 1 \right) =o\left( am\otimes 1 + 1\otimes dn \right)+r\left( 1\otimes 1 \right) =r\left( 1\otimes 1 \right)  $. Hence every element of the tensor product can be expressed as $r\left( 1\otimes 1 \right) $ with $r\in \{0, \ldots ,d-1\}$ and multiplying by $r$ annihilates every element of the tensor product. Thus our tensor product is some quotient of  $\frac{Z}{d}$ determined by the smallest element that multiplies everything to zero. If we can prove that the  $r$ terms we have now are distinct, then it has to be the group itself. So as noted earlier, we need to find a bilinear map from the direct product that separates them. Consider $\left( k,l \right)\mapsto kl $. Clearly bilinear, clearly separates our elements, so done.
+    
+\end{exmp}
+\begin{exmp}
+    Non-zero group whose tensor product with itself is zero: $\frac{\Q}{\Z}$. \Q seems like a nice place to start but in order to reproduce the way we solved the products with it, we need every element to have finite order, so we divide by $\Z$ to make it hold and then the proof is just moving denominators to get an integer on one side of the product.
+\end{exmp}
+\begin{que}
+    Let $f:M\to N$ be an $R$-module map. Then we can  "extend" it to $f\otimes id : M\otimes P\to N\otimes P$ by sending $m\otimes p$ to $f(m)\otimes p$
+    \begin{itemize}
+        \item If $f$ is surjective, must $f\otimes id$ be surjective?\\
+            Sure. Any element of $N$ has a non-empty preimage under $f$ and the identity just keeps the $p$ whatever we choose it to be, so this allows us to obtain all elements of the tensor product in the obvious way.
+        \item If $f$ is injective, must $f\otimes id$ be injective?\\
+            The best we can do right now requires using the universal property of tensor products. Consider $\varphi:\text{Im}f\times P\to M\otimes P$ given by $\left( f(m),p \right)\mapsto m\otimes p $. This is bilinear and well defined since $f$ is injective. Then by the universal property of tensor products, there exists a unique map $\Phi:\text{Im}f\otimes P\to M\otimes P$ that commutes with the quotient map from  $\text{Im}f\times P\to \text{Im}f\times P$. Now suppose $f(m)\otimes p=f(m')\otimes p'$. Then the images of these under $\Phi$ are also equal. But these are equal to the images under $\varphi$ so we get $m\otimes p=m'\otimes p'$ which is exactly the implication we needed for the injectivity of $f\otimes id$ 
+    \end{itemize}
+    \[\begin{tikzcd}
+        f(M)\times P\arrow[r] \arrow[rd,"\varphi"] & \arrow[d,"\Phi"]f(M)\otimes P\\ & M\otimes P
+    \end{tikzcd}\]
+\end{que}
+\end{document}
