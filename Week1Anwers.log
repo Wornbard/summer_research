@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.23)  23 JUN 2020 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.23)  23 JUN 2020 15:15
 entering extended mode
-**./notes.tex
-(notes.tex
+**./Week1Anwers.tex
+(Week1Anwers.tex
 LaTeX2e <2018-12-01>
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -300,10 +300,12 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-))))
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)))))
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count97
@@ -805,14 +807,10 @@ Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO
 )
-(C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\auxhook.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 759.
@@ -953,19 +951,19 @@ s
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 159.
+less on input line 164.
 
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 160.
+less on input line 165.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 162.
+less on input line 167.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 163.
+less on input line 168.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
@@ -1395,8 +1393,8 @@ File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 \c@thm=\count349
- (notes.aux)
-\openout1 = `notes.aux'.
+ (Week1Anwers.aux)
+\openout1 = `Week1Anwers.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -1486,123 +1484,70 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 LaTeX Font Info:    Try loading font information for U+stmry on input line 18.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/stmaryrd\ustmry.fd)
-(figures/loopcontract.pdf_tex
-<./figures/loopcontract.pdf, id=28, page=1, 682.86612pt x 341.43306pt>
-File: ./figures/loopcontract.pdf Graphic file (type pdf)
-<use ./figures/loopcontract.pdf, page 1>
-Package pdftex.def Info: ./figures/loopcontract.pdf , page1 used on input line 
-56.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) (figures/loop_inverse.pdf_tex
-<./figures/loop_inverse.pdf, id=29, page=1, 682.86612pt x 341.43306pt>
-File: ./figures/loop_inverse.pdf Graphic file (type pdf)
-<use ./figures/loop_inverse.pdf, page 1>
-Package pdftex.def Info: ./figures/loop_inverse.pdf , page1 used on input line 
-56.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/loop_inverse.pdf, id=30, page=2, 682.86612pt x 341.43306pt>
-File: ./figures/loop_inverse.pdf Graphic file (type pdf)
-<use ./figures/loop_inverse.pdf, page 2>
-Package pdftex.def Info: ./figures/loop_inverse.pdf , page2 used on input line 
-58.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) [1
-
-{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./figures/
-loopcontract.pdf>] (figures/torus.pdf_tex
-<./figures/torus.pdf, id=45, page=1, 682.86612pt x 341.43306pt>
-File: ./figures/torus.pdf Graphic file (type pdf)
-<use ./figures/torus.pdf, page 1>
-Package pdftex.def Info: ./figures/torus.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/torus.pdf, id=46, page=2, 682.86612pt x 341.43306pt>
-File: ./figures/torus.pdf Graphic file (type pdf)
-<use ./figures/torus.pdf, page 2>
-Package pdftex.def Info: ./figures/torus.pdf , page2 used on input line 63.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/torus.pdf, id=47, page=3, 682.86612pt x 341.43306pt>
-File: ./figures/torus.pdf Graphic file (type pdf)
-<use ./figures/torus.pdf, page 3>
-Package pdftex.def Info: ./figures/torus.pdf , page3 used on input line 67.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) [2 <./figures/loop_inverse.pdf> <./figures/loop_inverse.pdf>] (figures/circle
-wedge.pdf_tex
-<./figures/circlewedge.pdf, id=55, page=1, 682.86612pt x 341.43306pt>
-File: ./figures/circlewedge.pdf Graphic file (type pdf)
-<use ./figures/circlewedge.pdf, page 1>
-Package pdftex.def Info: ./figures/circlewedge.pdf , page1 used on input line 5
-6.
-(pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) [3 <./figures/torus.pdf> <./figures/torus.pdf> <./figures/torus.pdf> <./figur
-es/circlewedge.pdf>] [4]
 (figures/circlewedgehomotopy.pdf_tex
-<./figures/circlewedgehomotopy.pdf, id=71, page=1, 682.86612pt x 341.43306pt>
+<./figures/circlewedgehomotopy.pdf, id=28, page=1, 682.86612pt x 341.43306pt>
 File: ./figures/circlewedgehomotopy.pdf Graphic file (type pdf)
 <use ./figures/circlewedgehomotopy.pdf, page 1>
 Package pdftex.def Info: ./figures/circlewedgehomotopy.pdf , page1 used on inpu
 t line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/circlewedgehomotopy.pdf, id=72, page=2, 682.86612pt x 341.43306pt>
+<./figures/circlewedgehomotopy.pdf, id=29, page=2, 682.86612pt x 341.43306pt>
 File: ./figures/circlewedgehomotopy.pdf Graphic file (type pdf)
 <use ./figures/circlewedgehomotopy.pdf, page 2>
 Package pdftex.def Info: ./figures/circlewedgehomotopy.pdf , page2 used on inpu
 t line 61.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/circlewedgehomotopy.pdf, id=73, page=3, 682.86612pt x 341.43306pt>
+<./figures/circlewedgehomotopy.pdf, id=30, page=3, 682.86612pt x 341.43306pt>
 File: ./figures/circlewedgehomotopy.pdf Graphic file (type pdf)
 <use ./figures/circlewedgehomotopy.pdf, page 3>
 Package pdftex.def Info: ./figures/circlewedgehomotopy.pdf , page3 used on inpu
 t line 63.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) (figures/projectiveline.pdf_tex
-<./figures/projectiveline.pdf, id=74, page=1, 682.86612pt x 341.43306pt>
+) [1
+
+{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (figures/p
+rojectiveline.pdf_tex
+<./figures/projectiveline.pdf, id=46, page=1, 682.86612pt x 341.43306pt>
 File: ./figures/projectiveline.pdf Graphic file (type pdf)
 <use ./figures/projectiveline.pdf, page 1>
 Package pdftex.def Info: ./figures/projectiveline.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<./figures/projectiveline.pdf, id=75, page=2, 682.86612pt x 341.43306pt>
+<./figures/projectiveline.pdf, id=47, page=2, 682.86612pt x 341.43306pt>
 File: ./figures/projectiveline.pdf Graphic file (type pdf)
 <use ./figures/projectiveline.pdf, page 2>
 Package pdftex.def Info: ./figures/projectiveline.pdf , page2 used on input lin
 e 58.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-) [5 <./figures/circlewedgehomotopy.pdf> <./figures/circlewedgehomotopy.pdf> <.
-/figures/circlewedgehomotopy.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 132--137
-
- []
-
-[6 <./figures/projectiveline.pdf> <./figures/projectiveline.pdf>] [7]
-(notes.aux) ) 
+) [2 <./figures/circlewedgehomotopy.pdf> <./figures/circlewedgehomotopy.pdf> <.
+/figures/circlewedgehomotopy.pdf>] [3 <./figures/projectiveline.pdf> <./figures
+/projectiveline.pdf>] [4] (Week1Anwers.aux) ) 
 Here is how much of TeX's memory you used:
- 36315 strings out of 492895
- 748830 string characters out of 3133476
- 760094 words of memory out of 3000000
- 39623 multiletter control sequences out of 15000+200000
- 555733 words of font info for 101 fonts, out of 3000000 for 9000
+ 36214 strings out of 492895
+ 746778 string characters out of 3133476
+ 759983 words of memory out of 3000000
+ 39556 multiletter control sequences out of 15000+200000
+ 544261 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,82p,944b,1019s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappe
-n/ec/dpi600\tcrm1000.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts/pk/ljf
-our/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\f
-onts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Marcin\AppData\Local\M
-iKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Marcin\AppD
-ata\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on notes.pdf (7 pages, 194524 bytes).
+ 64i,15n,82p,821b,1108s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Marcin\AppData\Local\Mi
+KTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Marcin\AppDa
+ta\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\M
+arcin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> 
+<C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ec
+bx1440.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+symbols/msbm7.pfb>
+Output written on Week1Anwers.pdf (4 pages, 141205 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
+ 189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

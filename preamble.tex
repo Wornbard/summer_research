@@ -38,6 +38,11 @@
 \newcommand\Q{\ensuremath{\mathbb{Q}}}
 \newcommand\C{\ensuremath{\mathbb{C}}}
 \newcommand\mathP{\ensuremath{\mathbb{P}}}
+\newcommand{\tens}[1]{%
+	\mathbin{\mathop{\otimes}\limits_{#1}}%
+}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
 % Easily typeset systems of equations (French package)
 \usepackage{systeme}
 
@@ -144,7 +149,7 @@
     \marginpar{\small\textsf{\mbox{#2}}}
 }
 
-
+\DeclareMathOperator{\Ima}{Im}
 
 % These are the fancy headers
 \usepackage{fancyhdr}

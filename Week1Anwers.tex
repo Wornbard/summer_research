@@ -1,0 +1,91 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage{tikz-cd}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}                                                                 
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}   
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section*{ 2020-06-18}
+
+\begin{que} $X=T^{2}=S^{1}\times S^{1}$, $\pi_1(X,x)=\Z\times\Z$. Let's find the automorphism group of $\pi_1$. Each automorphism is defined by the image of $\left( 1,0 \right) $ and $\left( 0,1 \right) $ and these must give a unique preimage of each element of $\Z^{2}$. So suppose \[
+    \begin{pmatrix} x\\ y  \end{pmatrix}\mapsto \begin{pmatrix} k & l \\ m & n  \end{pmatrix}\begin{pmatrix} x\\y \end{pmatrix}
+.\] 
+Then we just need our matrix to be invertible with the entries of the inverse also in $\Z$. Hence our automorphism group is $GL_{2}\left( \Z \right) $.\\
+Let's see if every automorphism of $\pi_1$ is the image of an automorphism of $X$. Let $I=\left[ 0,1 \right) $. Then we can parametrize the torus by $I^2$ in the obvious way with $(0,0)$ being the fixed point $x$. In this context we can consider the same map \[
+    \begin{pmatrix} x\\ y  \end{pmatrix}\mapsto \begin{pmatrix} k & l \\ m & n  \end{pmatrix}\begin{pmatrix} x\\y \end{pmatrix} \mod\Z^2
+.\] It definitely sends loops to loops. Is it an automorphism? It comes down to injectivity. Suppose the images of two points differ by an "integer vector". Then by taking their difference we have \[
+M\underline{x}=\begin{pmatrix} k & l\\ m & n \end{pmatrix} \begin{pmatrix} x\\y \end{pmatrix}=\begin{pmatrix} a\\b \end{pmatrix}\in \Z^2\setminus \{0\}
+.\] 
+But $M$ is invertible so $\underline{x}=M^{-1}\underline{a}$ and RHS clearly has integer entries so $\underline{x}=\underline{0}$ so the map is injective. Surjectivity also clearly holds, as does continuity so it is an automorphism. Moreover it does to our loops precisely the same thing as the automorphism of $\pi_1$ represented by the same matrix, so it is mapped to it. Hence the map between automorphism groups is surjective.
+
+\end{que}
+\begin{que}$X=S^{1}\vee S^{1}$, $\pi_1(X,0)=F_2$.
+     We know that:
+     $$\Inn(F_2) \cong F_2/Z(F_2) \cong F_2$$ So $$F_2 \mathrel{\unlhd} \Aut(F_2)$$
+     Hence $\Aut(F_2)$ is infinite and non-abelian.
+     But it seems not too terrible to classify the automorphisms of $X$ that do something non-trivial to the loops. A loop that winds around either circle one has to be mapped to a loop with the same property because automorphisms are injective and the initial loop (or at least a homotopy-equivalent one) is injective except for the double $0$ preimage. Call the two fundamental loops $\gamma_1,\gamma_2$. Then the automorphism of $\pi_1$ it gives is determined by the image of $\gamma_1$ which can be $\pm\gamma_1,\gamma_2$. Hence the image of the automorphism group of $X$ in $\pi_1$ is $C_2\times C_2$ and this definitely is not the whole automorphism group of $F_2$.
+    
+\end{que}
+\begin{que}
+    How does the map from $S^{1}\vee S^{1}$ to $T^{2}$ work?\\
+    We can send the loops on one to the other. The fact that these commute on the torus but not the domain is because (I guess) there is "more room" on the torus for a homotopy that sends one to the other. The torus with a point removed is homotopy equivalent to the wedge of two circles (I think of it as "burning out" the space from the removed point until we are left with two loops) and without that point our homotopy between the compositions of two loops in different orders no longer works.  
+\begin{figure}[ht]
+    \centering
+    \incfig{circlewedgehomotopy}
+    \caption{circlewedgehomotopy}
+    \label{fig:circlewedgehomotopy}
+\end{figure}
+\end{que}
+\begin{que}
+    Is there a space whose fundamental group has torsion?\\
+    Yes, I guess but there are some holes in the reasoning. Take $\R\mathP^2$ with a fixed point $\left[ 1,0,0 \right] $ Then there is a line that goes to $[0,1,0]=[0,-1,0]$ and then from $[0,-1,0]$ back but from the other side. Then (most apparent if we take the square representation of the projective plane) we can "rotate" the line continuously to one which goes in the opposite direction. Hence it is its own inverse. However, I'm not sure how to prove rigorously that the line itself can't be contracted.  
+\begin{figure}[ht]
+    \centering
+    \incfig{projectiveline}
+    \caption{projectiveline}
+    \label{fig:projectiveline}
+\end{figure}
+    
+\end{que}
+\begin{que}
+    $\frac{\Z}{n\Z} \tens{\mathbb{Z}} \Q=\left\{ 0 \right\} $. Indeed note that $k\otimes \frac{p}{q}=nk\otimes \frac{p}{nq}=0\otimes \frac{p}{nq}=0$. This will work for any abelian group whose every element has finite order (i.e. also direct products of cyclic groups).
+\end{que}
+\begin{que}
+	We can use the next question.
+\end{que}
+\begin{que}
+    $\frac{\mathbb{Z}}{m} \tens{\mathbb{Z}} \frac{\mathbb{Z}}{n}=\frac{\Z}{\gcd\left( m,n \right) }$.
+    \\Let $\gcd(m,n)=d$. Then have  $a,b$ s.t. $am+bn=d$ so $d(1 \otimes 1) = (am+bn)(1 \otimes 1) = (am \otimes 1) + (bn \otimes 1)= 0 \otimes 0$. Hence for any k,l we have:
+    $k\otimes l=kl (1\otimes 1)=r\left( 1\otimes 1 \right)$ with $r\in \{0, \ldots ,d-1\}$. Hence the tensor product has at most $d$ elements. On the other hand, consider map $\phi : \frac{\mathbb{Z}}{m} \times \frac{\mathbb{Z}}{n} \to \frac{\mathbb{Z}}{d}$ given by $(k,l) \mapsto kl (\mod d)$. By universal property of tensor products, there is a map $\Phi : \frac{\mathbb{Z}}{m} \tens{\mathbb{Z}} \frac{\mathbb{Z}}{n} \to \frac{\mathbb{Z}}{d}$ s.t. $\Phi(k \otimes l) = \phi(k, l)$. $\phi$ is surjective, so $\Phi$ is surjective. But the tensor product has at most $d$ elements, so $\Phi$ is bijective, hence an isomorphism, so:
+    $$\frac{\mathbb{Z}}{m} \tens{\mathbb{Z}} \frac{\mathbb{Z}}{n} \cong \frac{\mathbb{Z}}{d}$$
+    
+\end{que}
+\begin{que}
+    Non-zero group whose tensor product with itself is zero: $\frac{\Q}{\Z}$. \Q seems like a nice place to start but in order to reproduce the way we solved the products with it, we need every element to have finite order, so we divide by $\Z$ to make it hold and then the proof is just moving denominators to get an integer on one side of the product.
+\end{que}
+\begin{que}
+    Let $f:M\to N$ be an $R$-module map. Then we can  "extend" it to $f\otimes id : M\otimes P\to N\otimes P$ by sending $m\otimes p$ to $f(m)\otimes p$
+    \begin{itemize}
+        \item If $f$ is surjective, must $f\otimes id$ be surjective?\\
+            Sure. Any element of $N$ has a non-empty preimage under $f$ and the identity just keeps the $p$ whatever we choose it to be, so this allows us to obtain all elements of the tensor product in the obvious way.
+        \item If $f$ is injective, must $f\otimes id$ be injective?\\
+            The best we can do right now requires using the universal property of tensor products. Consider $\varphi:\text{Im}f\times P\to M\otimes P$ given by $\left( f(m),p \right)\mapsto m\otimes p $. This is bilinear and well defined since $f$ is injective. Then by the universal property of tensor products, there exists a map $\Phi:\text{Im}f\otimes P\to M\otimes P$ that makes the following diagram commute:
+            \[\begin{tikzcd}
+            \Ima f \times P\arrow[r] \arrow[rd,"\varphi"] & \arrow[d,"\Phi"]\Ima f \otimes P\\ & M\otimes P
+            \end{tikzcd}\]
+            Now suppose $f(m)\otimes p=f(m')\otimes p'$. Then the images of these under $\Phi$ are also equal. But these are equal to the images under $\varphi$ so we get $m\otimes p=m'\otimes p'$ which is exactly the implication we needed for the injectivity of $f\otimes id$ 
+    \end{itemize}
+    
+\end{que}
+\end{document}
