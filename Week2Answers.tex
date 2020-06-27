@@ -20,14 +20,28 @@
 
 \begin{que} Can you embed the following groups into $F_2$?
 	\begin{itemize}
-		\item $F_3$
-		\item $F_\infty$
+		\item $F_3$ 
+		
+		Same as $F_\infty$, but restricted to first three generators.
+		\item $F_\infty$ 
+		
+		Let $a, b$ be generators of $F_2$. Consider $x_i = b^{-i} a b^{-i}$ for $i = 1, 2, ...$.
+			Let's prove that $\left< x_1, x_2, ... \right>$ is free:
+			Suppose that some reduced word $w = x_{y_1}^{z_1} x_{y_2}^{z_2} ...$ is equal to identity.
+			It is reduced, so $y_i \neq y_i+1$ for any $i$	
+			$$b^{-y_1} a^{z_1} b^{y_1- y_2} a^{z_2} b^{y_2 - y_3} ... = e$$
+			All exponents in the above word are non-zero, so the above word is reduced and non-empty, so it is not equal to identity, contradiction.
+			Hence $\left< x_1, x_2, ... \right> \cong F_{\infty}$, so $F_2$ has a subgroup isomorphic to $F_{\infty}$.
+			
 	\end{itemize}
 \end{que} 
 \begin{que} How to recover $d_i$'s in classification of finitely generated abelian groups?
 	
 \end{que}
-\begin{que} Show that free R-modules are projective
+\begin{que} Show that free R-modules are projective.
+	
+	Let $p_1, ... p_k$ be a basis for a free R-module $P$. Suppose $f : N \to M$ is a surjective homomorphism and $g: N \to M$ is a homomorphism. $f$ is surjective, so let $n_i$ be s.t. $f(n_i) = g(p_i)$. 
+	Now let $h : P \to M$ be defined by $h(r_i p_i)=r_i n_i$. This is well defined, because $P$ is free, and it's also a homeomorphism. Moreover $f \circ h(r_i p_i) = f(r_i n_i) = r_i g(p_i) = g(r_i p_i)$, so $g = f \circ h$, so $P$ is projective.
 \end{que}
 \begin{que} Show that if P is projective then $\otimes P$ preserves injectivity of maps.
 \end{que}
@@ -40,6 +54,16 @@
 \end{que}
 \begin{que} Given $f : M \to M$ a homomorphism of R-modules, write down two "interesting" maps
 $$\Lambda^i M \to \Lambda^i M$$ induced by $f$. Interpret these maps when $i=n$.
+
+Let $g_1 : \Lambda^i M \to \Lambda^i M$ be defined by $g_1(m_1 \otimes ... \otimes m_i) = f(m_1) \otimes ... f(m_i)$. 
+Let $g_2 : \Lambda^i M \to \Lambda^i M$ be defined by $g_2(m_1 \otimes ... \otimes m_i) = f(m_1) \otimes ... \otimes m_i + m_1 \otimes f(m_2) ... \otimes m_i + ... + m_1 \otimes m_2 ... \otimes f(m_i)$. They are well defined because they factor through the quotient defining the exterior algebra.
+If $i=n$, let $e_1, e_2, ..., e_n$ be the basis of $M$, and let $f_ij$ be the j-th component of $f(e_i)$ in this basis. The only basis vector for $\Lambda^n M$ is $e_1 \otimes e_2 ... \otimes e_n$:
+$$g_1(C e_1 \otimes e_2 ... \otimes e_n) = C f(e_1) \otimes (e_2) ... \otimes f(e_n) = C (f_{1j}e_j) \otimes (f_{2j}e_j) ... \otimes (f_{nj}e_j) = C \det(f_{ij})  e_1 \otimes e_2 ... \otimes e_n$$
+So $g_1$ corresponds to multiplication by $\det(f_{ij})$.
+Similarly:
+$$g_2(C( e_1 \otimes e_2 ... \otimes e_n)) = C(f(e_1) \otimes ... \otimes e_n + e_1 \otimes f(e_2) ... \otimes e_i + ... + e_1 \otimes e_2 ... \otimes f(e_n))$$
+$$ = C(e_{11} + e_{22}+...+e_{nn}) e_1 \otimes e_2 ... \otimes e_n = C \Tr(f_{ij}) e_1 \otimes e_2 ... \otimes e_n$$
+So $g_2$ corresponds to multiplication by $\Tr(f_{ij})$.
 \end{que}
 
 \end{document}

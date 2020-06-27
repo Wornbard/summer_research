@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.23)  25 JUN 2020 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.23)  26 JUN 2020 18:05
 entering extended mode
 **./Week2Answers.tex
 (Week2Answers.tex
@@ -951,19 +951,19 @@ s
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 165.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 166.
 
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 168.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 167.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 169.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 170.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
@@ -1484,18 +1484,37 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 LaTeX Font Info:    Try loading font information for U+stmry on input line 18.
 
 (C:\Users\Marcin\AppData\Roaming\MiKTeX\2.9\tex/latex/stmaryrd\ustmry.fd)
+Overfull \hbox (84.92894pt too wide) detected at line 61
+\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Ce[] \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 e[]::: \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Cf\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ::: \OM
+S/cmsy/m/n/10 
+ \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) = \OM
+L/cmm/m/it/10 C\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]e[]\OT1/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 
+ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]e[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ::: 
+\OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]e[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 C
+ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 e[] \
+OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 e[]::: \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 e[]
+ []
+
 [1
 
-{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/Marcin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 (Week2Answers.aux) ) 
 Here is how much of TeX's memory you used:
- 36060 strings out of 492895
- 742765 string characters out of 3133476
- 752982 words of memory out of 3000000
- 39414 multiletter control sequences out of 15000+200000
+ 36062 strings out of 492895
+ 742770 string characters out of 3133476
+ 757995 words of memory out of 3000000
+ 39416 multiletter control sequences out of 15000+200000
  542727 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,11n,82p,822b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,12n,82p,822b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/
 jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Marcin\AppData\Local\MiKTeX\2.9\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Marcin\AppData\Local\MiKTe
@@ -1504,12 +1523,13 @@ Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb>
-Output written on Week2Answers.pdf (1 page, 87479 bytes).
+public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+>
+Output written on Week2Answers.pdf (2 pages, 107524 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
+ 153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
