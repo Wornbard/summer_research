@@ -154,10 +154,8 @@ Let's take a look at some examples.
         \item If $f$ is surjective, must $f\otimes id$ be surjective?\\
             Sure. Any element of $N$ has a non-empty preimage under $f$ and the identity just keeps the $p$ whatever we choose it to be, so this allows us to obtain all elements of the tensor product in the obvious way.
         \item If $f$ is injective, must $f\otimes id$ be injective?\\
-            The best we can do right now requires using the universal property of tensor products. Consider $\varphi:\text{Im}f\times P\to M\otimes P$ given by $\left( f(m),p \right)\mapsto m\otimes p $. This is bilinear and well defined since $f$ is injective. Then by the universal property of tensor products, there exists a unique map $\Phi:\text{Im}f\otimes P\to M\otimes P$ that commutes with the quotient map from  $\text{Im}f\times P\to \text{Im}f\times P$. Now suppose $f(m)\otimes p=f(m')\otimes p'$. Then the images of these under $\Phi$ are also equal. But these are equal to the images under $\varphi$ so we get $m\otimes p=m'\otimes p'$ which is exactly the implication we needed for the injectivity of $f\otimes id$ 
+            No. Take for instance $M=\Z$, $N=\Q$ and $P= \frac{\Z}{n}$. Then $N\otimes P={0}$ and $M\otimes P=M$ so the $f\otimes id$ map clearly is not injective.       
     \end{itemize}
-    \[\begin{tikzcd}
-        f(M)\times P\arrow[r] \arrow[rd,"\varphi"] & \arrow[d,"\Phi"]f(M)\otimes P\\ & M\otimes P
-    \end{tikzcd}\]
 \end{que}
+\section*{2020-06-25}
 \end{document}
