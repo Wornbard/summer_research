@@ -31,7 +31,16 @@
 \end{que}
 \begin{que} What is $\text{gr}  \text{Cl}(Q)$
 \end{que}
-\begin{que} Classify $ \text{Cl}(Q)$ over $\mathbb{R}$ and $\mathbb{C}$ for $\dim V = 0, 1, 2$.
+\begin{que} Classify $ \text{Cl}(Q)$ over $\mathbb{R}$ and $\mathbb{C}$ for $\dim V = 0, 1, 2$.\\
+ \begin{enumerate}
+     \item $K=\C$
+         \begin{itemize}
+             \item dim 0 : the tensor algebra is just scalars, the ideal we quotient by is trivial so the algebra is just $\C$
+             \item dim 1 : If the quadratic form  has signature \{0\}, then we just get the exterior algebra. If \{1\}, then if $e_1$ is the basis vector of $V$ we get $e_1^2=1$ and that's the only condition on our algebra.
+             \item dim 2 : For \{0,0\} it's just the exterior algebra. For \{1,0\} and a basis $e_1,e_2$ of $V$ we have by expanding  $1=\left( e_1+e_2 \right)^2=e_1e_1+e_2e_2+e_2e_1+e_1e_2=1=0+e_2e_1+e_1e_2 $ so $e_1e_2=-e_2e_1$. So our algebra is spanned by $1,e_1,e_2,e_1e_2$ modulo $e_1^2=1$,$e_2^2=0$,$e_1e_2+e_2e_1=0$. It can be represented as a matrix algebra with $e_1=\begin{pmatrix} 1 & 0\\0 & -1 \end{pmatrix} $, $e_2=\begin{pmatrix} 0 & 1\\0 & 0 \end{pmatrix} $.\\
+                 Finally we have \{1,1\} which yields similar conditions except that now $e_2^2=1$. A possible matrix representation is one with $e_1$ as before and $e_2=\begin{pmatrix} 0 & i\\-i & 0  \end{pmatrix} $.
+         \end{itemize}
+ \end{enumerate}
 
 \end{que}
 \end{document}
