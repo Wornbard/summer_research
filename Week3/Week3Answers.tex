@@ -23,11 +23,23 @@
 \end{que} 
 \begin{que} For the deformed product to be associative, what properties must $m_1$ have?
 	
-	
+	Keeping terms up to order $t$ we have:
+	$$m(m(r_1, r_2), r_3) = m_0(m_0(r_1, r_2) + t m_1(r_1,r_2), r_3) + t m_1(m(r_1, r_2), r_3)) = $$
+	$$ = m_0(m_0(r_1, r_2), r_3) + t (m_0(m_1(r_1, r_2), r_3)) +  m_1(m_0(r_1, r_2), r_3))$$
+	And similarly for $m(r_1, m(r_2, r_3))$. Hence we need 
+	$$m_0(m_1(r_1, r_2), r_3)) +  m_1(m_0(r_1, r_2), r_3) = m_0(r_1, m_1(r_2, r_3)) +  m_1(r_1, m_0(r_2, r_3))$$.
 \end{que}
 \begin{que} Classify quadratic forms up to isomorphism when $K = \mathbb{C}$ or $K = \mathbb{R}$. 
 	
-
+	
+	Clearly any real quadratic form $Q$ can be (uniquely) represented by a symmetric matrix $B$ such that
+	$$Q(x) = x^T B x$$
+	Any real symmetric matrix can be diagonalized by an orthogonal transformation, so it suffices to consider diagonal B. By rescaling the axes we can reduce it to having entries $0, 1, -1$ on the diagonal. Now quadratic forms of such form are distinguished by the dimension of maximal subspace on which it is positive / identically zero.
+	
+	Similarly any complex quadratic form $Q$ can be represented by a Hermitian matrix $B$ such that 
+	$$Q(x) = x^\dag B x$$
+	By spectral theorem any hermitian matrix can be diagonalized by a unitary matrix, so it suffices to consider diagonal B.
+	By rescaling the axes we can reduce it to having entries $0, 1$ on the diagonal. Now quadratic forms of such form are distinguished by the dimension of maximal subspace on which it is positive / identically zero.
 \end{que}
 \begin{que} What is $\text{gr}  \text{Cl}(Q)$
 \end{que}
@@ -42,5 +54,10 @@
          \end{itemize}
  \end{enumerate}
 
+\end{que}
+\begin{que} Find invertible elements in $\Lambda V$
+	
+	Clearly any element with zero scalar part is not invertible. Let $x$ be any such element. Suppose $x$ is a sum of $k$ decomposable vectors. Then $\underbrace{x \wedge ... \wedge x}_\text{k+1 times}$ consists of exterior products of $k+1$ decomposable vectors , hence contains a repetition, hence is zero. So $x$ is nilpotent. Thus $1+x$ is invertible. Thus, multiplying by a suitable scalar we get that any element with non-zero scalar part is invertible.
+	
 \end{que}
 \end{document}
