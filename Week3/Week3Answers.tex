@@ -26,12 +26,18 @@
 	
 \end{que}
 \begin{que} Classify quadratic forms up to isomorphism when $K = \mathbb{C}$ or $K = \mathbb{R}$. 
-	
-
+	Clearly any quadratic form $Q$ can be (uniquely) represented by a symmetric matrix $B$ such that
+	$$Q(x) = x^T B x$$
+	Any symmetric matrix it can be diagonalized by an orthogonal transformation, so it suffices to consider diagonal B. 
 \end{que}
 \begin{que} What is $\text{gr}  \text{Cl}(Q)$
 \end{que}
 \begin{que} Classify $ \text{Cl}(Q)$ over $\mathbb{R}$ and $\mathbb{C}$ for $\dim V = 0, 1, 2$.
 
+\end{que}
+\begin{que} Find invertible elements in $\Lambda V$
+	
+	Clearly any element with zero scalar part is not invertible. Let $x$ be any such element. Suppose $x$ is a sum of $k$ decomposable vectors. Then $\underbrace{x \wedge ... \wedge x}_\text{k+1 times}$ consists of exterior products of $k+1$ decomposable vectors , hence contains a repetition, hence is zero. So $x$ is nilpotent. Thus $1+x$ is invertible. Thus, multiplying by a suitable scalar we get that any element with non-zero scalar part is invertible.
+	
 \end{que}
 \end{document}
