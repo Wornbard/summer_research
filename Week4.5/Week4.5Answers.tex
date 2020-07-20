@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+Let's prove by induction that for $n>1$ and distinct $a_1, a_2, ..., a_{n+1} \in \mathbb{N}$ we have:
+$$e_{a_1} e_{a_2} \cdots e_{a_n} e_{a_{n+1}} e_{a_n} \cdots e_{a_1}= e_{a_n+1}-e_{a_{n}}$$
+For $n=2$ we have:
+$$e_{a_1} e_{a_2} e_{a_1} = e_{a_1} (-1-e_{a_1} e_{a_2}) = -e_{a_1} + e_{a_2}$$
+For $n>2$ we have:
+$$e_{a_1} e_{a_2} \cdots e_{a_n} e_{a_{n+1}} e_{a_n}  \cdots e_{a_1} =$$
+$$= e_{a_1} (e_{a_2} \cdots e_{a_n} e_{a_{n+1}} e_{a_n} e_{a_n-1} \cdots e_{a_2}) e_{a_1}=$$
+$$ = e_{a_1} ( e_{a_{n+1}}-e_{a_{n}}) e_1 = 
+(e_{a_{n+1}} - a_1)-(e_{a_{n}} - a_1) = e_{a_{n+1}}-e_{a_{n}}$$
+
+If $a_1, a_2, ..., a_{n}$ are distinct but $a_{n+1} = a_k$ for some $k \in \{\cdots n\}$, then
+$$e_{a_1} e_{a_2} \cdots e_{a_n} e_{a_{n+1}} e_{a_n} e_{a_{n-1}} \cdots e_{a_1} =$$
+$$e_{a_1} e_{a_2} \cdots e_{a_k} (e_{a_{n+1}} - e_{a_n}) e_{a_k} \cdots e_{a_1} =$$
+$$e_{a_1} e_{a_2} \cdots e_{a_{n+1}} (e_{a_{n+1}} - e_{a_n}) e_{a_{n+1}} \cdots e_{a_1}$$
+$$e_{a_1} e_{a_2} \cdots e_{a_{k-1}} (-e_{a_{n+1}} - (e_{a_n} - e_{a_n+1})) e_{a_{k-1}} \cdots e_{a_1}=$$
+$$-e_{a_1} e_{a_2} \cdots e_{a_{k-1}} e_{a_n} e_{a_{k-1}} \cdots e_{a_1}=$$
+$$e_{a_{k-1}}- e_{a_n}$$
+If $a_1, a_2, ..., a_{n}$ are distinct but $a_{n+1} = a_1$, then
+$$e_{a_1} e_{a_2} \cdots e_{a_n} e_{a_{n+1}} e_{a_n} e_{a_{n-1}} \cdots e_{a_1} =$$
+$$e_{a_{n+1}} (e_{a_{n+1}} - e_{a_n}) e_{a_{n+1}} = -e_{a_n}$$
+
+Let $x = e_1 e_2 \cdots e_n$.
+
+Case 1. $n$ is even
+
+We have $x^{-1} = e_n e_{n-1} \cdots e_1$. Hence
+\[x e_i x^{-1} = \begin{cases}
+		-e_n,& \text{if } i = 1\\
+		e_{i-1} - e_n,   & \text{otherwise}
+\end{cases}
+\]
+So $x$ gives the desired automorphism. If another element $y$ gives the same automorphism, then $xy^{-1}$ commutes with every vector, hence commutes with every element of the algebra, but by [1] Clifford algebra of even dimension is central simple, so $x y^{-1}$ is a scalar. Hence such an element is unique up to scalar multiplication.
+
+Case 2. $n$ is odd
+
+We have $x^{-1} = -e_n e_{n-1} \cdots e_1$. Hence
+\[x e_i x^{-1} = \begin{cases}
+e_n,& \text{if } i = 1\\
+-e_{i-1} + e_n,   & \text{otherwise}
+\end{cases}
+\]
+Suppose there exists an element $y$ which gives the desired automorphism. 
+We get
+$$x y^{-1} e_i y x^{-1} = -e_i$$ for all $i$.
+But by [1] $v \mapsto -v$ is not an inner automorphisms, contradiction.
+
+\begin{thebibliography}{9}
+	\bibitem{latexcompanion} 
+	Marco Budinich
+	\textit{On Spinors Transformations}. 
+University of Trieste and INFN, Trieste, Italy, 2017
+\end{thebibliography}
+\end{document}
