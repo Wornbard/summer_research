@@ -1,0 +1,20 @@
+hypercube of dim n: 
+Conditions (2) and (3): C_2^dim
+Condition (1) does nothing.
+hypercube of dim n with one corner cut off:
+Dim 2,4,5,6,7:
+Conditions (2) and (3): Trivial group
+Condition (1) obviously does nothing
+Dim 3:
+Conditions (2) and (3): S_3
+Condition (1) does nothing
+
+hypercube of dim n with two opposite corners cut off:
+Conditions (2) and (3): Trivial group
+Condition (1) obviously does nothing
+CP_n:
+Conditions (2) and (3): S_{n+1}
+Condition (1) does nothing.
+CP_n with one corner cut off:
+Conditions (2) and (3): S_{n}
+Condition (1): S_{n-1}, because (-1,-1,...-1) has different length than other faces, hence can't be in image of an automorphism(does this make sense)?
