@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+Suppose $n>3$.
+For hypercube of dimension $n$ with one corner cut off we have:
+$$W(x_1,x_2, \dots, x_n) = \sum_{i=1}^{n}(x_i+\frac{1}{x_i}) + \frac{1}{\prod_{i=1}^{n}x_i}$$
+So if we let $p = \prod_{i=1}^{n}x_i$ we get:
+$$(\nabla W)_i = 1-\frac{1}{x_i^2}-\frac{1}{p x_i}$$
+So at critical points we have $x_i^2-1-\frac{x_i}{p} = 0$ for all $i$. Hence for all $i,j$, we have $x_i = x_j$ or $x_i x_j = -1$.
+Knowing this, we can try to find a critical point of the form:
+\[x_i = \begin{cases}
+x,& \text{if } i < n\\
+\frac{-1}{x},   & \text{if } i = n
+\end{cases}
+\]
+for some $x$. We would then have $p = -x^{n-2}$, so $x^2 +x^{3-n} = 1$.
+Consider $P(x) = x^{n-1}+1-x^{n-3}$.
+Then by fundamental theorem of algebra it has a root, and clearly it's not equal to $0$. It is also not equal to $\pm i$, because we would have $2 x^{n-1} = -1$, which can be ruled out by comparing absolute values of both sides. It is also not equal to $\pm 1$, because $P(\pm 1) =1$. So a critical point of this form exists, and $\frac{-1}{x} \neq x$, and $x \neq \frac{1}{x}$.
+So nth column of the matrix of element of $\Gamma$ can be $(0,0,\dots,0,1)$ or $(-1,-1,\dots,-1)$.
+Similar argument works for all other columns, so element of $\Gamma$ can differ from identity matrix by replacing columns with $(-1,-1,\dots,-1)$. 
+But no two columns can be the same, so at most one column can be equal to $(-1,-1,\dots,-1)$.
+Without loss of generality suppose that the automorphism is $x_1 \mapsto x_1, x_2 \mapsto x_2, ..., x_{n-1} \mapsto x_{n-1}, x_{n} \mapsto \frac{1}{\prod_{i=1}^{n}x_i}$.
+But then we would have $$x_n^2 -\frac{x_n}{ \frac{\prod_{i=1}^{n-1}x_i}{\prod_{i=1}^{n}x_i}}-1=0$$
+$$x_n^2-x_n^2-1=0$$
+$$-1=0$$
+contradiction.
+For $n=3$, if there is a root with not all coordinates equal, we can write it as $(x, x, \frac{-1}{x})$ for some non-zero $x$. Then $p=-x$, so $x^2+1-1=0$, so $x=0$, contradiction.
+So all critical points are of the form $(x, x, x)$ for some non-zero $x$.
+So $x$ satisfies $x^2 - \frac{x}{x^3} - 1 =0$.
+Clearly sending $x \mapsto 1/x$ doesn't preserve this equation, so possible columns of an element of $\Gamma$ are $(0,0,1), (0,1,0), (0,0,1), (-1,-1,-1)$. If $(-1,-1, -1)$ would preserve this critical point, then we would have $x=\frac{1}{x^3}$, so $x \in \{1,-1,-\i,\i\}$, but they don't satisfy $x^2 - x^{-2} - 1 =0$, so possible columns are $(0,0,1), (0,1,0), (0,0,1)$, so we get $S_3$.
+
+For $n=2$, we can modify the proof for the case $n>3$, by checking directly that $x^2 +x^{3-n} = 1$ has a non-zero root.
+\end{document}
