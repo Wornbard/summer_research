@@ -1,0 +1,79 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}
+\newtheorem{clm}[thm]{Claim}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+	Let $M \subset Z^2$ be the set of exponents of monomials in $W(x,y)$.
+	
+\clm If $M$ contains two linearly independent vectors, then every element in $\Gamma$ has finite order.
+
+ Suppose that $M$ contains two linearly independent vectors $x$ and $y$. Then for any $A \in \Gamma$ we have $A^k x= x$ for some $k$ (because $M$ is finite). Similarly $A^m y = y$ for some $y$. Hence $A^{k m}$ fixes both $x$ and $y$, so $A^{k m} = I$, so $A$ has finite order.
+\clm If $M$ contains no two independent vectors, then $\Gamma_+ \cong \mathbb{Z}$ or $\Gamma_+ \cong \mathbb{Z} \times C_{2}$ or $\Gamma_+ \cong C_{2}$.
+
+Let $(a,b) \in M$ be the vector with minimal length.
+Choose a basis for $Z^2$ such that $(a,b)$ is a multiple of $(1,0)$ in a new basis. Then $(1,0)$ is an eigenvector of $A$ for any $A \in \Gamma_+$. Moreover, the eigenvalue is either $1$ or $-1$, because otherwise we could obtain an infinite sequence of distinct monomials. For any $A \in \Gamma_+$ we also need the determinant to be 1, so it either has the form:
+$\begin{pmatrix}
+	1 & a \\
+	0 & 1 \\
+\end{pmatrix}$ or the form 
+$\begin{pmatrix}
+-1 & b \\
+0 & -1 \\
+\end{pmatrix}$
+for some $a, b$ in $\mathbb{Z}$.
+
+$\begin{pmatrix}
+1 & 1 \\ 
+0 & 1 \\
+\end{pmatrix}$ or the form 
+$\begin{pmatrix}
+-1 & 1 \\
+0 & -1 \\
+\end{pmatrix}$ generate a group isomorphic to $\mathbb{Z} \times C_2$, and $\Gamma_+$ is its subgroup so $\Gamma_+ \cong \mathbb{Z}$ or $\Gamma_+ \cong \mathbb{Z} \times C_2$ or $\Gamma_+ \cong C_2$
+\clm If $M$ contains two linearly independent vectors, then $\Gamma_+ \cong C_2$ or $\Gamma_+ \cong C_3$
+Suppose that $\Gamma_+$ contains an element of order 2. It has determinant $1$, so it either has eigenvalues $1, 1$ or $-1, -1$. Direct check of conjugacy classes shows that it has to be conjugate to $\begin{pmatrix}
+-1 & 0 \\ 
+0 & -1 \\
+\end{pmatrix}$, hence equal to it. We know that then $\Gamma_+$ has no other elements of finite order, so no other elements at all, hence $\Gamma_+ \equiv C_2$.
+The only other possibility is that $\Gamma_+$ has exponent 3. Then by considering 3rd roots of unity we see that any non-identity element $A$ in $\Gamma_+$ has eigenvalues $\frac{-1-i\sqrt{3}}{2}$ and $\frac{-1+i\sqrt{3}}{2}$. Hence, we can pick an appropriate basis and assume that $\begin{pmatrix}
+\frac{-1-i\sqrt{3}}{2} & 0 \\ 
+0 &  \frac{-1+i\sqrt{3}}{2}\\
+\end{pmatrix} \in \Gamma_+$.In particular, any non-identity element of $A$ has trace $-1$ and determinant $1$. Suppose $\Gamma_+$ contains a matrix with non-zero top right entry. It then has the form:
+$\begin{pmatrix}
+a & b \\ 
+\frac{-1-a-a^2}{b} & -1-a \\
+\end{pmatrix}$ 
+We need 
+$$\begin{pmatrix}
+\frac{-1-i\sqrt{3}}{2} & 0 \\ 
+0 &  \frac{-1+i\sqrt{3}}{2}\\
+\end{pmatrix} \begin{pmatrix}
+	a & b \\ 
+	\frac{-1-a-a^2}{b} & -1-a \\
+\end{pmatrix}$$ to have trace $-1$. Hence $a = \frac{-1-i\sqrt{3}}{2}$, and so left down entry is $0$. 
+But then 
+$$\begin{pmatrix}
+\frac{-1-i\sqrt{3}}{2} & 0 \\ 
+0 &  \frac{-1+i\sqrt{3}}{2}\\
+\end{pmatrix} \begin{pmatrix}
+a & b \\ 
+\frac{-1-a-a^2}{b} & -1-a \\
+\end{pmatrix} = \begin{pmatrix}
+\frac{-1+i\sqrt{3}}{2} & \frac{-b-b i\sqrt{3}}{2} \\ 
+0 & \frac{-1-i\sqrt{3}}{2} \\
+\end{pmatrix} \in \Gamma_+$$
+But it doesn't satisfy these conditions.
+Similarly matrix with non-zero left down entry cannot exist, so all elements of $\Gamma_+$ are diagonal, and $\Gamma_+ \cong C_3$
+\end{document}
