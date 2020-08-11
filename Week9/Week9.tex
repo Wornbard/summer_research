@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}
+\newtheorem{clm}[thm]{Claim}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+Suppose there is only one independent monomial $x^a y^b$. Then
+$W(x, y) = P(x^a y^b)$ for some Laurent polynomial P.
+Hence:
+$$\nabla W(x,y) = (a x^{a-1} P'(x^a y^b), b x^{b-1} P'(x^a y^b))$$
+At least one of $a, b$ is not zero, so at critical points we need $P'(x^a y^b) = 0$.
+So, critical points have the form $$x^a y^b = c$$ with $c$ being one of the critical points of $P$.
+Suppose that $P$ has a critical point $c$ not equal to $0$.
+Let's look for elements of $\Gamma$ fixing critical points satisfying $x^a y^b =c$. Considering only first coordinate, the map has to look like:
+$$(x,y) \mapsto x x^e y^f$$
+With $x^e y^f=1$ whenever $x^a y^b = c$.
+But we can arbitrarily multiply $x$ by a-th roots of unity and $y$ by b-th roots of unity, so it has to take form:
+$$(x,y) \mapsto x x^{e a} y^{f b}$$
+We can also multiply $x$ by $2^b$ and $y$ by $2^{-a}$, so we have to have $e=f$. Hence the only possible maps are:
+$$(x,y) \mapsto x (x^{a} y^{b})^e$$
+In fact, such map works, if $c$ is a root of unity, and $e$ divides order of $e$.
+The most general form of the element of $\Gamma$ is therefore:
+$$A = \begin{pmatrix}
+	1+ k a & m a \\ 
+	k b & 1+m b \\
+\end{pmatrix}$$
+We have $\det A = 1 + k a + m b$.
+Suppose $A \in \Gamma_+$.
+
+If $b \neq 0$, then $m = \frac{-k a}{b}$.
+Then 
+$$A = \begin{pmatrix}
+1 + a k & \frac{- a^2 k}{b} \\ 
+b k & 1 - a k \\
+\end{pmatrix} $$
+and 
+$$A^n = \begin{pmatrix}
+1 + n a k & \frac{- n a^2 k}{b} \\ 
+n b k & 1 - n a k \\
+\end{pmatrix} $$
+Hence $\Gamma_+ \cong \mathbb{Z}$.
+If $b = 0$ we can use the same argument with $a$.
+
+In both cases we have $ \begin{bmatrix}
+a\\ 
+b 
+\end{bmatrix}$ is an eigenvector of $A$ with eigenvalue $1$, so $A$ fixes $W(x,y)$.
+
+Suppose $\det A  = -1$.
+
+If $b \neq 0$, then $m = \frac{-2-k a}{b}$.
+Then 
+$$A = \begin{pmatrix}
+1 + a k & \frac{a(-2-a k)}{b} \\ 
+b k & -1 - a k \\
+\end{pmatrix} $$
+and 
+$$A^2 = I $$
+
+So $\Gamma$ is not isomorphic to $\mathbb{Z} \times C_2$, because it would contain elements of determinant $-1$ that square to non-identity elements.
+
+The same argument also seems to work for higher dimensions.
+\end{document}
