@@ -15,9 +15,9 @@
 \pdfsuppresswarningpagegroup=1
 
 \begin{document}
-Idea 1.
+\textbf{Idea 1}
 Let $x = (x_1, x_2, ..., x_n)$ be in the domain of $W$.
-Write $\textbf{x}^v$ for $x_1^{v_1} x_2^{v_2} .. x_n^{v_n}$. Then, if a matrix $M$ fixes $\textbf{x}$(), then we have $\textbf{x}^v = \textbf{x}^{Mv}$ for any vector $x$.
+Write $\textbf{x}^v$ for $x_1^{v_1} x_2^{v_2} .. x_n^{v_n}$. Then, if a matrix $M$ fixes $\textbf{x}$, then we have $\textbf{x}^v = \textbf{x}^{Mv}$ for any vector $v$.
 Consider a term 
 $$f(\textbf{x}) = \sum_{i=0}^{k-1} \textbf{x}^{M^i v}$$
 where $M^k v =v$.
@@ -25,7 +25,7 @@ Then we have(assuming $M$ fixes $x$):
 $$(\nabla f)_j = \sum_{i=0}^{k-1} (M^i v)_j \textbf{x}^{M^i v} = \sum_{i=0}^{k-1} (M^i v)_j \textbf{x}^{v} = (\sum_{i=0}^{k-1} M^i) \textbf{x}^{v} v_j$$
 So $$\nabla f = (\sum_{i=0}^{k-1} M^i) \textbf{x}^{v} v$$.
 $$(M-I)\nabla f= (M^k-I)v \textbf{x}^{v}= 0$$
-Now $\Gamma$ fixes $W$, so we can partition $W$ into partition $W$ into linear combination of terms like $f$, so:
+Now $\Gamma$ fixes $W$, so we can partition $W$ into linear combination of terms like $f$, so:
 $$(M-I)\nabla W = 0$$
 For any $M$ in $\Gamma$.
 Hence $\nabla W \in \cap_{M \in \Gamma} \ker(M - I)$
@@ -39,16 +39,21 @@ This shows that
 
 Also this generalizes the idea with $-id$ in dimension 2. 
 
-In fact, even if the kernels coincide, then except for some very rare cases $W$ has at least one critical point. TODO.
+In fact, even if the kernels coincide, then except for some very rare cases $W$ has at least one critical point. (TODO)
 
-Idea 2.
+
+
+\textbf{Idea 2}
 In dimension $2$:
 \begin{enumerate}
 	\item If $\Gamma_+ = C_2$, then fixed points are precisely $(1,1), (1,-1), (-1,1), (-1, -1)$. Additionally it can be proven that the quadratic form associated with $(1,1)$ is non-degenerate (using Cauchy Schwartz inequality on elements of a matrix one can prove that $\det Q > 0$).
 	\item If $\Gamma = C_3$ or $\Gamma = S_3$, then $(1,1)$ is a critical point, critical points are exactly those fixed by an element of order $3$ (because $\det(M-I) = 3$), and they are third roots of unity.
 	\item The above condition might imply that we can always find a transposition in case $C_3 < \Gamma$. We would then have that $C_3$ is not a possible $\Gamma$. TODO
+	\item If $\Gamma = \mathbb{Z}$ or $\Gamma = D_\infty$ then:
+	$W(x, y) = P(x^a y^b)$ and $P$ is a polynomial such that the only non-zero roots are roots of unity, and the non-zero roots are distinct(otherwise we would have critical points with zero quadratic form). Then all the critical points have a degenerate quadratic form with exactly one non-zero eigenvalue.
+	If we knew that $P$ is a monic polynomial, then $P$ is a Kronecker polynomial(monic polynomial with roots being roots of unity) and there is a classification of them. Additionally imposing the condition that roots are distinct could give something more.
 \end{enumerate}
-Idea 3.
+\textbf{Idea 3}
 In dimension 3:
 If $W$ has a critical point with non-degenerate quadratic form, then we have to have $M^T Q M = Q$ for every $M \in \Gamma$, so $M$ is isomorphic to a subgroup of orthogonal group, which along with some other conditions(TODO) shows that $\Gamma$ can be only one of $id, C_2, C_3, C_4, C_6, C_2 \times C_2, S_3, A_4, S_4, C_2 \times C_2 \times C_2, D_8$. In fact
 \begin{enumerate}
@@ -62,4 +67,62 @@ If $W$ has a critical point with non-degenerate quadratic form, then we have to 
 \end{enumerate}
 So if every element in $\Gamma$ has finite order, then either it is one of the above, or $\Gamma$ has no critical point with non-degenerate critical form.
 
+Now suppose every critical point in $\Gamma$ has degenerate quadratic form.
+
+
+\textbf{Case 1} There is a point with zero quadratic form.
+Conjugation is trivial, so $\Gamma$ is trivial.
+
+\textbf{Case 2} There is a point with only one non-zero eigenvalue.
+The Clifford algebra is isomorphic to the one with $Q= \begin{pmatrix}
+	1 & 0 &0 \\ 
+	0 & 0 &0\\
+	0 & 0 &0\\
+\end{pmatrix}$.
+Then inverse of $1+c e1e2+d e2e3+ e e1e3$ is $1-c e1e2-d e2e3- e e1e3$ and so conjugating by elements of even grading we can get automorphisms of the form(calculated with Mathematica):
+$ \begin{pmatrix}
+1 & 0 &0 \\ 
+a & 1 & 0\\
+b & 0 &  1\\
+\end{pmatrix}$
+Also, elements with zero scalar part aren't invertible so there is nothing to do.
+
+Then inverse of $ce1+de2+ e e3+ e1e2e3$ is $1/c^2(ce1+de2+ e e3- e1e2e3)$ and so conjugating by elements of odd grading we can get automorphisms of the form(calculated with Mathematica):
+$ \begin{pmatrix}
+-1 & 0 &0 \\ 
+a & 1 & 0\\
+b & 0 &  1\\
+\end{pmatrix}$
+Elements with zero $e1e2e3$ are invertible, but they give the same kind of automorphisms.
+
+That means that element of det $1$ give a subgroup of $\mathbb{Z} \times \mathbb{Z}$, and any element of determinant $-1$ is of order 2.
+Hence $\Gamma$ can be isomorphic to either $\mathbb{Z} \times \mathbb{Z}$ or semidirect products: $\mathbb{Z} \times D_\infty$ or $D_\infty \times D_\infty$ or $C_2$.
+
+\textbf{Case 3}. There is a point with two non-zero eigenvalues
+Then inverse of $1+c e1e2+d e2e3+ e e1e3$ is $1/(1+c^2)(1-c e1e2-d e2e3- e e1e3)$ and so conjugating by elements of even grading we can get automorphisms of the form(calculated with Mathematica):
+$\begin{pmatrix}
+\frac{1-c^2}{1+c^2} & \frac{2c}{1+c^2} &0 \\ 
+\frac{-2c}{1+c^2} & \frac{1-c^2}{1+c^2} & 0\\
+\frac{2cd-2e}{1+c^2} & \frac{-2cd-2e}{1+c^2} &  1\\
+\end{pmatrix}$
+We can use a substitution(we can take $c=\infty$ to account for the fact that we set the scalar part to $1$) to get that the matrices are of the form:
+$\begin{pmatrix}
+\cos(\phi) & \sin(\phi) &0 \\ 
+-\sin(\phi) & \cos(\phi) & 0\\
+a & b &  1\\
+\end{pmatrix}$
+
+Inverse of $c e1+d e2+ e e3+ e1e2e3$ is $1/(c^2+d^2) (c e1 + d e2 + e e3 -1)$ and so conjugating by elements of odd grading we can get automorphisms of the form(calculated with Mathematica):
+$\begin{pmatrix}
+\frac{d^2-c^2}{c^2+d^2} & \frac{-2 d c}{c^2+d^2} &0 \\ 
+\frac{-2 d c}{c^2+d^2} & \frac{d^2-c^2}{c^2+d^2} & 0\\
+\frac{2d-2ce}{c^2+d^2} & \frac{-2c-2de}{c^2+d^2} &  1\\
+\end{pmatrix}$
+We can use a substitution to get that the matrices are of the form:
+$\begin{pmatrix}
+-\cos(\phi) & \sin(\phi) &0 \\ 
+\sin(\phi) & -\cos(\phi) & 0\\
+a & b &  1\\
+\end{pmatrix}$
+Then $\Gamma$ is isomorphic to $Z \times Z$ or $Z \times D_\infty$ or $D_\infty \times D_\infty$ or $C_2, C_3, C_4, C_6, D_4, S_3,D_8$.(PROOF TODO).
 \end{document}
