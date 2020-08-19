@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+
+\input{preamble.tex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{que}[thm]{Question}
+\newtheorem{clm}[thm]{Claim}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+Idea 1.
+Let $x = (x_1, x_2, ..., x_n)$ be in the domain of $W$.
+Write $\textbf{x}^v$ for $x_1^{v_1} x_2^{v_2} .. x_n^{v_n}$. Then, if a matrix $M$ fixes $\textbf{x}$(), then we have $\textbf{x}^v = \textbf{x}^{Mv}$ for any vector $x$.
+Consider a term 
+$$f(\textbf{x}) = \sum_{i=0}^{k-1} \textbf{x}^{M^i v}$$
+where $M^k v =v$.
+Then we have(assuming $M$ fixes $x$):
+$$(\nabla f)_j = \sum_{i=0}^{k-1} (M^i v)_j \textbf{x}^{M^i v} = \sum_{i=0}^{k-1} (M^i v)_j \textbf{x}^{v} = (\sum_{i=0}^{k-1} M^i) \textbf{x}^{v} v_j$$
+So $$\nabla f = (\sum_{i=0}^{k-1} M^i) \textbf{x}^{v} v$$.
+$$(M-I)\nabla f= (M^k-I)v \textbf{x}^{v}= 0$$
+Now $\Gamma$ fixes $W$, so we can partition $W$ into partition $W$ into linear combination of terms like $f$, so:
+$$(M-I)\nabla W = 0$$
+For any $M$ in $\Gamma$.
+Hence $\nabla W \in \cap_{M \in \Gamma} \ker(M - I)$
+
+This shows that 
+\begin{enumerate}
+	\item If there is an element of $\Gamma$ with no eigenvalue $1$ then critical points of $W$ are precisely points fixed by it(additionaly it can be proven that in this case they are roots of unity of order divisible by $\det(M-I)$.(TODO: PROOF)
+	\item As a consequence, all matrices in $\Gamma$ with no eigenvalue $1$ have to fix exactly the same points, and all other matrices also have to fix them.
+	\item If all matrices in $M$ in $\Gamma$ have an eigenvalue $1$ but intersection of $ker(M-I)$ is empty, then $W$ has a critical point $(1, \dots,1)$ but also all other points fixed by all elements of $\Gamma$.
+\end{enumerate}
+
+Also this generalizes the idea with $-id$ in dimension 2. 
+
+In fact, even if the kernels coincide, then except for some very rare cases $W$ has at least one critical point. TODO.
+
+Idea 2.
+In dimension $2$:
+\begin{enumerate}
+	\item If $\Gamma_+ = C_2$, then fixed points are precisely $(1,1), (1,-1), (-1,1), (-1, -1)$. Additionally it can be proven that the quadratic form associated with $(1,1)$ is non-degenerate (using Cauchy Schwartz inequality on elements of a matrix one can prove that $\det Q > 0$).
+	\item If $\Gamma = C_3$ or $\Gamma = S_3$, then $(1,1)$ is a critical point, critical points are exactly those fixed by an element of order $3$ (because $\det(M-I) = 3$), and they are third roots of unity.
+	\item The above condition might imply that we can always find a transposition in case $C_3 < \Gamma$. We would then have that $C_3$ is not a possible $\Gamma$. TODO
+\end{enumerate}
+Idea 3.
+In dimension 3:
+If $W$ has a critical point with non-degenerate quadratic form, then we have to have $M^T Q M = Q$ for every $M \in \Gamma$, so $M$ is isomorphic to a subgroup of orthogonal group, which along with some other conditions(TODO) shows that $\Gamma$ can be only one of $id, C_2, C_3, C_4, C_6, C_2 \times C_2, S_3, A_4, S_4, C_2 \times C_2 \times C_2, D_8$. In fact
+\begin{enumerate}
+	\item $id$ occurs for $W = 0$
+	\item $C_2 \times C_2$ occurs for $CP^3$ with a 2d face blown up.
+	\item $S_3$ occurs for $CP^3$ with a vertex blown up(PROOF TODO)
+	\item $C_2 \times C_2 \times C_2$ occurs for cube.
+	\item $S_4$ occurs for $CP^3$
+	\item $D_8$ occurs for a square-based pyramid (PROOF TODO)
+	\item We don't know yet for $C_2, C_3, C_4, C_6, A_4$, but as all except for $C_6$ are subgroups of some obtainable groups, it shouldn't be easy to exclude them.
+\end{enumerate}
+So if every element in $\Gamma$ has finite order, then either it is one of the above, or $\Gamma$ has no critical point with non-degenerate critical form.
+
+\end{document}
