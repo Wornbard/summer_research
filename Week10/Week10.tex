@@ -39,9 +39,22 @@ This shows that
 
 Also this generalizes the idea with $-id$ in dimension 2. 
 
-In fact, even if the kernels coincide, then except for some very rare cases $W$ has at least one critical point. (TODO)
+In fact, even if the kernels coincide, then except for some very rare cases $W$ has at least one critical point.
 
+Summary of the idea:
+How do points fixed by a matrix $M$ look like?
 
+If $ker(M-I)$ is trivial, then all coordinates are roots of unity with order divisible by $det(M-I)$.
+
+Otherwise, we can additionaly multiply by things of the form $(x^{v_1}, x^{v_2}, x^{v_3})$, where $(v_1, v_2, v_3) \in \ker(M-I)$, for example if $ M\begin{pmatrix}
+1 & 0 &0 \\ 
+0 & 0 & -1\\
+0 & 1 & -1\\
+\end{pmatrix}$ then fixed points are of the form $(x, \omega, \omega)$ where $\omega^3 = 1$.
+
+Suppose $\dim (\ker(M-I))=1$. Then $\nabla W \in ker(M-I)$, and it's a polynomial in the free parameter describing the fixed points. Under some conditions(this is the messy part but it's definitely possible to formalize) we get a polynomial that is not of the form $a x^b$, and so has a non-zero complex root. So, then $W$ has a critical point.
+
+This can also used to prove some restrictions on $W$ in certain cases(if different matrices in $\Gamma$ fix different classes of points then actually the polynomial above can't have any non-zero complex roots for the classes which are not fixed by all elements of $\Gamma$).
 
 \textbf{Idea 2}
 In dimension $2$:
@@ -55,7 +68,7 @@ In dimension $2$:
 \end{enumerate}
 \textbf{Idea 3}
 In dimension 3:
-If $W$ has a critical point with non-degenerate quadratic form, then we have to have $M^T Q M = Q$ for every $M \in \Gamma$, so $M$ is isomorphic to a subgroup of orthogonal group, which along with some other conditions(TODO) shows that $\Gamma$ can be only one of $id, C_2, C_3, C_4, C_6, C_2 \times C_2, S_3, A_4, S_4, C_2 \times C_2 \times C_2, D_8$. In fact
+If $W$ has a critical point with non-degenerate quadratic form, then we have to have $M^T Q M = Q$ for every $M \in \Gamma$, so $M$ is isomorphic to a subgroup of orthogonal group, which along with restricting order of elements to $1,2,3,4,6$ and the fact that if $-id \in \Gamma$ then it only has elements of order 2(as in dimension 2) shows that $\Gamma$ can be only one of $id, C_2, C_3, C_4, C_6, C_2 \times C_2, S_3, A_4, S_4, C_2 \times C_2 \times C_2, D_8$. In fact
 \begin{enumerate}
 	\item $id$ occurs for $W = 0$
 	\item $C_2 \times C_2$ occurs for $CP^3$ with a 2d face blown up.
@@ -63,7 +76,8 @@ If $W$ has a critical point with non-degenerate quadratic form, then we have to 
 	\item $C_2 \times C_2 \times C_2$ occurs for cube.
 	\item $S_4$ occurs for $CP^3$
 	\item $D_8$ occurs for a square-based pyramid (PROOF TODO)
-	\item We don't know yet for $C_2, C_3, C_4, C_6, A_4$, but as all except for $C_6$ are subgroups of some obtainable groups, it shouldn't be easy to exclude them.
+	\item $C_6$ occurs for $W(x,y,z)= 1/x y+y/x+1/(x z)+y/(x z)+ z/x+z/(x y)$
+	\item We don't know yet for $C_2, C_3, C_4, A_4$, but as all of them are subgroups of some obtainable groups, it shouldn't be easy to exclude them.
 \end{enumerate}
 So if every element in $\Gamma$ has finite order, then either it is one of the above, or $\Gamma$ has no critical point with non-degenerate critical form.
 
@@ -125,4 +139,10 @@ $\begin{pmatrix}
 a & b &  1\\
 \end{pmatrix}$
 Then $\Gamma$ is isomorphic to $Z \times Z$ or $Z \times D_\infty$ or $D_\infty \times D_\infty$ or $C_2, C_3, C_4, C_6, D_4, S_3,D_8$.(PROOF TODO).
+
+What we learned way too late:
+Actually every finite subgroup of $GL(n, \mathbb{Z})$ is conjugate to a subgroup of $O(n)$ according to this:
+https://mathoverflow.net/questions/27258/finite-subgroups-of-rm-sl-2-mathbbz-reference-request
+So the classification from beginning of Idea 3 doesn't require considering different cases for $Q$.
+
 \end{document}
