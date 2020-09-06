@@ -10,6 +10,7 @@
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{exmp}[thm]{Example}
 \newtheorem{defn}[thm]{Definition}
+\newtheorem{cor}[thm]{Corollary}
 \newtheorem{que}[thm]{Question}
 \newtheorem{clm}[thm]{Claim}
 \pdfsuppresswarningpagegroup=1
@@ -58,28 +59,47 @@
     \clm If $M$ contains two linearly independent vectors, then every element in $\Gamma$ has finite order.
     
     Suppose that $M$ contains two linearly independent vectors $x$ and $y$. Then for any $A \in \Gamma$ we have $A^k x= x$ for some $k$ (because $M$ is finite). Similarly $A^m y = y$ for some $m$. Hence $A^{k m}$ fixes both $x$ and $y$, so $A^{k m} = I$, so $A$ has finite order.
-    \clm If $M$ contains no two independent vectors, then $\Gamma_+ \cong \mathbb{Z}$ or $\Gamma_+ \cong \mathbb{Z} \times C_{2}$ or $\Gamma_+ \cong C_{2}$.
+    \clm If $M$ contains no two independent vectors, then $\Gamma$ is isomorphic to one of $ id, \mathbb{Z}, C_2, D_{\infty}$, and the latter two can only occur if $W$ has no critical points.
     
-    Let $(a,b) \in M$ be the vector with minimal length.
-    Choose a basis for $Z^2$ such that $(a,b)$ is a multiple of $(1,0)$ in a new basis. Then $(1,0)$ is an eigenvector of $A$ for any $A \in \Gamma_+$. Moreover, the eigenvalue is either $1$ or $-1$, because otherwise we could obtain an infinite sequence of distinct monomials. For any $A \in \Gamma_+$ we also need the determinant to be 1, so it either has the form:
+    
+    By changing the basis appropriately, we can assume that $W(x, y) = P(x)$ for some Laurent polynomial $P$.
+    If $P$ doesn't have any critical points in $C^\star$, then $P(t) =a+ b t^n$ for some $a, b, n \in \mathbb{Z}$.
+    Any matrix in $\Gamma$ has to fix the vector $(1,0)$, and $\Gamma \leq GL(2,\mathbb{Z})$, so the matrices have the forms
+    Choose a basis for $Z^2$ such that $(a,b)$ is a multiple of $(1,0)$ in a new basis. Then $(1,0)$ is an eigenvector of $A$ for any $A \in \Gamma_+$. Moreover, the eigenvalue is either $1$ or $-1$, because otherwise we could obtain an infinite sequence of distinct monomials. For any $A \in \Gamma_+$ we also need the determinant to be 1, so any matrix in $\Gamma$ either has the form
     $\begin{pmatrix}
     1 & a \\
     0 & 1 \\
     \end{pmatrix}$ or the form 
     $\begin{pmatrix}
-    -1 & b \\
+    1 & b \\
     0 & -1 \\
-    \end{pmatrix}$
-    for some $a, b$ in $\mathbb{Z}$.
+    \end{pmatrix}$. Hence $\Gamma \leq D_inf$, so $\Gamma$ is one of $D_inf$, $\mathbb{Z}$, $C_2$, $id$.
     
-    $\begin{pmatrix}
-    1 & 1 \\ 
-    0 & 1 \\
-    \end{pmatrix}$ or the form 
-    $\begin{pmatrix}
-    -1 & 1 \\
-    0 & -1 \\
-    \end{pmatrix}$ generate a group isomorphic to $\mathbb{Z} \times C_2$, and $\Gamma_+$ is its subgroup so $\Gamma_+ \cong \mathbb{Z}$ or $\Gamma_+ \cong \mathbb{Z} \times C_2$ or $\Gamma_+ \cong C_2$
+	Now suppose that $W$ has a critical point $x_0$ in $C^{\star}$. Then the quadratic form $Q$ associated to this point is:
+	$$Q= \frac{-1}{2} D^2 W = \frac{-1}{2}\begin{pmatrix}
+	\frac{\partial^2 W}{\partial x^2} & 0 \\ 
+	0 &  0\\
+	\end{pmatrix} = \frac{- P''(x_0)}{2} \begin{pmatrix}
+	1 & 0 \\ 
+	0 &  0\\
+	\end{pmatrix}$$
+	
+	Now any automorphism of determinant $1$ in $\Gamma$ has to come from transpose of conjugation by an element of even grading in $Cl(Q)$. Suppose that this element is $a+ b e_1e_2$. We have:
+	$$(a+b e_1 e_2)(x+y e_1 e_2) = a x + (b x + a y) e_1 e_2 + b y e_1 e_2 e_1 e_2 =$$
+	$$  =  a x + (b x + a y) e_1 e_2 - b y e_1 e_1 e_2 e_2 = a x+(b x +a y) e_1 e_2$$
+	So it is invertible iff $a \neq 0$ and we then have $(a+ b e_1 e_2)^{-1} = \frac{1}{a} - \frac{b}{a^2} e_1 e_2$.
+	Hence image of $e_1$ under conjugation by $a+ b e_1 e_2$ is:
+	$$ (\frac{1}{a} - \frac{b}{a^2} e_1 e_2) e_1 (a+ b e_1 e_2) = (\frac{1}{a} - \frac{b}{a^2} e_1 e_2) (a e_1 + \frac{- p b e_2}{2}) =$$ $$= e_1 - \frac{b}{a} e_1 e_2 e_1 - \frac{p b e_2}{2 a} + \frac{p b^2 e_2 e_2}{2 a^2} = e_1 - \frac{b}{a} e_1 e_2 e_1 - \frac{p b e_2}{2 a} =$$
+	$$= e_1 + \frac{b}{a} e_2 e_1 e_1 - \frac{p b e_2}{2 a} = e_1 + \frac{ -p b}{2a} e_2 - \frac{p b e_2}{2 a} = e_1 - \frac{p b}{a} e_2$$
+	Similarly:
+	$$ (\frac{1}{a} - \frac{b}{a^2} e_1 e_2) e_2 (a+ b e_1 e_2) = \frac{e_2}{a} (a+ b e_1 e_2) =$$
+	$$=e_2+\frac{b}{a}e_2 e_1 e_2 = e_2 - \frac{b}{a} e_1 e_2 e_2 = e_2$$
+	So the most general form of a matrix in $\Gamma+$ is:
+	$$\begin{pmatrix}
+		1 & k \\ 
+		0 &  1\\
+		\end{pmatrix}$$ for some integer $k$. 
+	TODO: write down similar calculations for negative determinant to prove they are not possible
     \clm If $M$ contains two linearly independent vectors, then $\Gamma_+ \cong C_2$ or $\Gamma_+ \cong C_3$.
     
     Suppose that $\Gamma_+$ contains an element of order 2. It has determinant $1$, so it either has eigenvalues $1, 1$ or $-1, -1$. Direct check of conjugacy classes shows that it has to be conjugate to $\begin{pmatrix}
@@ -119,21 +139,16 @@
     
     Suppose we had an element of order 6 in $GL(2,\Z)\setminus SL(2,\Z)$. Consider its eigenvalues $\lambda_1,\lambda_2$. Let them have multiplicative orders $a,b$ s.t. $LCM(a,b)=6$. The possibilities are (1,6),(2,6),(3,6),(6,6),(2,3) corresponding to different choices of roots of unity for  $\lambda_1.\lambda_2$. But of these only the (6,6) pair can add up to an integer since sums of roots of unity of different order can't be integers (the sum of phases has to be 0). Now, a product of a root of unity and its conjugate has to be 1, hence the determinant is not -1, contradiction.
     
+    \cor $\Gamma \ncong C_6$
+    
     Summary of nontrivial possibilities for group $\Gamma$:
     \begin{enumerate}
     	\item $C_2$: Given by $W(x,y) = x^2 + y^2+ x y$ 
     	\item $C_2 \times C_2$: Given by $W(x,y) = x+ y +\frac{1}{x}+\frac{1}{y}$
     	\item $C_3$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $C_4$: We haven't found a corresponding $W(x,y)$ yet
     	\item $S_3$: Given by $W(x,y) = x + y +\frac{1}{xy}$
-    	\item $C_6$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $\mathbb{Z}$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $\mathbb{Z} \times C_2$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $\mathbb{Z} \times C_4$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $\mathbb{Z} \times C_2 \times C_2$: We haven't found a corresponding $W(x,y)$ yet
-    	\item $D_\infty$: $W(x,y) = x^n$(not sure about this one)
-    	\item $D_\infty \times C_2$: We haven't found a corresponding $W(x,y)$ yet
-    	\item Possibly something else with index 2 subgroup isomorphic to $\mathbb{Z} \times C_2$(We're not sure if other groups exist)
+    	\item $\mathbb{Z}$: We haven't found a corresponding $W(x,y)$ yet    
+    	\item $D_\infty$: $W(x,y) = x^n$	
     \end{enumerate}
 	\section{Conjecture about groups $\Gamma$ for $n \geq 5$}
 		In dimension $n$, $\Gamma$ is isomorphic to a subgroup of a group of the form:
