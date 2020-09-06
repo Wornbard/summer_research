@@ -1,0 +1,5 @@
+
+m:= [ [1,-1,0],[0,-1,1],[0,-1,0]];
+n:= [ [0,1,0],[0,0,1],[1,0,0]];
+list:=Combinations(Concatenation(m-IdentityMat(3),n-IdentityMat(3)),3);
+Print(List(list,x->Determinant(x)));
