@@ -1,0 +1,19 @@
+	
+
+for sys in [ 1 .. 33 ] do 
+	n:=NrQClassesCrystalSystem(4,sys);
+	for qclass in [1 .. n] do
+		for zclass in [1 .. NrZClassesQClass(4,sys,qclass)] do 
+			group:= MatGroupZClass(4,sys,qclass,zclass);
+			DisplayQClass(4,sys,qclass);
+			#name:=StringFormatted("D:/SummerResearch/summer_research/GAP/groups/{}_{}_{}.txt",sys,qclass,zclass);			
+			#AppendTo(name, "{");
+			#for g in group do	
+				
+			#	AppendTo(name, ReplacedString(ReplacedString(String(g),"[","{"),"]","}"));
+			#	AppendTo(name, ",");
+			#od;
+			#AppendTo(name, "}");
+		od;
+	od;
+od;
